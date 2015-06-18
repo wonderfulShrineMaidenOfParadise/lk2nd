@@ -290,8 +290,6 @@ FUNCTION(arch_cycle_count)
 #endif
 	bx		lr
 
-/* void rgb888_swap(const void *in, void *out, uint32_t npixels8) */
-/* https://developer.arm.com/documentation/den0018/a/NEON-Code-Examples-with-Intrinsics/Swapping-color-channels */
 FUNCTION(rgb888_swap)
 	.fpu neon
 0:	vld3.8  {d0,d1,d2}, [r0]!
@@ -300,3 +298,15 @@ FUNCTION(rgb888_swap)
 	subs    r2, r2, #1
 	bne     0b
 	bx      lr
+
+FUNCTION(arm_write_mair0)
+	mcr p15, 0, r0, c10, c2, 0
+	bx	lr
+
+FUNCTION(arm_write_mair1)
+	mcr p15, 0, r0, c10, c2, 1
+	bx lr
+
+FUNCTION(arm_write_ttbcr)
+	mcr p15, 0, r0, c2, c0, 2
+	bx lr
