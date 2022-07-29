@@ -46,3 +46,5 @@ else
     $(error Continuous splash display is not supported for the current target)
 endif
 endif
+
+include $(LOCAL_DIR)/util/rules.mk
