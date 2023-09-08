@@ -45,6 +45,21 @@ trigger:
   event: [push, pull_request, tag]
 ---
 kind: pipeline
+name: lk2nd-msm8909
+
+platform:
+  os: linux
+  arch: amd64
+
+steps:
+  - name: build
+    image: debian:buster
+    commands: [./.drone.sh lk2nd-msm8909]
+
+trigger:
+  event: [push, pull_request, tag]
+---
+kind: pipeline
 name: msm8916
 
 platform:
@@ -85,6 +100,21 @@ steps:
   - name: build
     image: debian:buster
     commands: [./.drone.sh msm8226]
+
+trigger:
+  event: [push, pull_request, tag]
+---
+kind: pipeline
+name: msm8909
+
+platform:
+  os: linux
+  arch: amd64
+
+steps:
+  - name: build
+    image: debian:buster
+    commands: [./.drone.sh msm8909]
 
 trigger:
   event: [push, pull_request, tag]
