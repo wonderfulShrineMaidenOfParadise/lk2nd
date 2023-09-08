@@ -14,3 +14,5 @@ ANDROID_BOOT_CMDLINE := lk2nd
 # Set in platform specific makefile (might need to change ANDROID_BOOT_BASE):
 #APPSBOOTHEADER: $(OUTBOOTIMG) $(OUTODINTAR)
 #ANDROID_BOOT_BASE := 0x80000000
+
+LK2ND_DISPLAY ?= cont-splash

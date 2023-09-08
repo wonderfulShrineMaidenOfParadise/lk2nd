@@ -37,14 +37,8 @@ ifneq ($(LK1ST_PANEL),)
 OBJS := $(filter-out target/$(TARGET)/oem_panel.o, $(OBJS))
 MODULES += lk2nd/panel
 CFLAGS += -DLK1ST_PANEL=$(LK1ST_PANEL)
-else ifeq ($(DISPLAY_USE_CONTINUOUS_SPLASH),1)
-# Filter out original display implementation
-OBJS := $(filter-out target/$(TARGET)/target_display.o target/$(TARGET)/oem_panel.o, $(OBJS))
-ifneq ($(filter $(DEFINES),DISPLAY_TYPE_MDSS=1),)
-    OBJS += $(LOCAL_DIR)/target_display_cont_splash_mdp5.o
-else
-    $(error Continuous splash display is not supported for the current target)
-endif
-endif
-
+else ifneq ($(LK2ND_DISPLAY),)
+INCLUDES += -I$(LOCAL_DIR)/include
 include $(LOCAL_DIR)/util/rules.mk
+MODULES += lk2nd/display
+endif
