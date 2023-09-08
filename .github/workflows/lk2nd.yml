@@ -10,7 +10,7 @@ jobs:
     needs: lk2nd-msm8916
     strategy:
       matrix:
-        project: [lk2nd-msm8226, lk2nd-msm8974]
+        project: [lk2nd-msm8226, lk2nd-msm8909, lk2nd-msm8974]
     uses: ./.github/workflows/build.yml
     with:
       project: ${{ matrix.project }}
@@ -35,7 +35,7 @@ jobs:
     needs: lk2nd-msm8916
     strategy:
       matrix:
-        project: [msm8916, msm8974, msm8226]
+        project: [msm8916, msm8974, msm8226, msm8909]
     uses: ./.github/workflows/build.yml
     with:
       project: ${{ matrix.project }}
