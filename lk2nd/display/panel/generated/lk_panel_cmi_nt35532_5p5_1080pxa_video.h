@@ -2329,8 +2329,8 @@ static inline void panel_cmi_nt35532_5p5_1080pxa_video_select(struct panel_struc
 	panel->paneltiminginfo = &cmi_nt35532_5p5_1080pxa_video_timing_info;
 	panel->panelresetseq = &cmi_nt35532_5p5_1080pxa_video_reset_seq;
 	panel->backlightinfo = &cmi_nt35532_5p5_1080pxa_video_backlight;
-	pinfo->mipi.panel_cmds = cmi_nt35532_5p5_1080pxa_video_on_command;
-	pinfo->mipi.num_of_panel_cmds = ARRAY_SIZE(cmi_nt35532_5p5_1080pxa_video_on_command);
+	pinfo->mipi.panel_on_cmds = cmi_nt35532_5p5_1080pxa_video_on_command;
+	pinfo->mipi.num_of_panel_on_cmds = ARRAY_SIZE(cmi_nt35532_5p5_1080pxa_video_on_command);
 	memcpy(phy_db->timing, cmi_nt35532_5p5_1080pxa_video_timings, TIMING_SIZE);
 	phy_db->regulator_mode = DSI_PHY_REGULATOR_LDO_MODE;
 }
