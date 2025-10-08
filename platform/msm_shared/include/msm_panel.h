@@ -36,7 +36,8 @@
 #include <sys/types.h>
 
 #define DFPS_MAX_FRAME_RATE 20
-#define DFPS_PLL_CODES_SIZE 0x1000 /* One page */
+//#define DFPS_PLL_CODES_SIZE 0x1000 /* One page */
+#define DFPS_PLL_CODES_SIZE 0 /* HACK Zero */
 
 /* panel type list */
 #define NO_PANEL		0xffff	/* No Panel */
